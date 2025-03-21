@@ -1,0 +1,41 @@
+services:
+  mbsync:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mbsync    # name the container
+    volumes:
+      - ./config:/config      # location of config file
+        # if the folder contains a config file named mbsync.rc, it will be used
+        # if no mbsync.rc is found, one will be created from the environment variables below
+        # (!) delete the created mbsync.rc if you change variables or add accounts
+      - ./Mail:/Mail          # mails go here
+    restart: unless-stopped
+    command: daemon 86400     # time between poll for new mails in seconds, comment out for one-shot run; one-shot will still retry on errors, stop with ctrl-c
+    environment:
+      - TZ=Europe/Berlin      # set your timezone
+
+      # Email account example
+      # only uncomment if you don't provide a mbsync.rc file
+      # Up to 9 accounts can be configured - Number in ACCOUNT1_ must be different per account, 1-9
+      # see https://isync.sourceforge.io/mbsync.html for options
+      # far = email-account, near = local
+       # your account
+#      - ACCOUNT1_EMAIL=demo@demo.com
+#      - ACCOUNT1_PASS=YOURPASSWORDHERE
+         # Passwords in container are handled by PassCmd to keep them out of the config file
+         # Passwords can still be found in the container so everyone who can enter it may find it
+         # consider a one-shot-sync and destroy container after run
+         # Use docker secrets if you want to keep your password out of the compose file
+         # $ in passwords can be problematic - try escaping - for 1 $ write &&, for 2 $ write &&&
+         # Most other special characters should be handled - else edit the config file manually and replace PassCmd with Pass YOURPASSWORDHERE
+#      - ACCOUNT1_IMAP_HOST=imap.demo.com  # e.g. imap.gmail.com
+       # settings
+#      - ACCOUNT1_SSL_TYPE=IMAPS
+#      - ACCOUNT1_SSL_VERSIONS=TLSv1.2
+#      - ACCOUNT1_SUBFOLDERS=Verbatim
+#      - ACCOUNT1_SYNC_MODE=Pull # Sync; Set the synchronization operation to perform; Pull - propagate changes from far to near
+#      - ACCOUNT1_SYNC_STATE=*   # SyncState; Set the location of this Channel’s synchronization state files. * means that the state should be saved in a file named .mbsyncstate in the near side mailbox itself
+#      - ACCOUNT1_CREATE=Near    # Automatically create missing mailboxes [on the far/near side]
+#      - ACCOUNT1_EXPUNGE=None   # (!) Permanently remove all messages [on the far/near side] which are marked for deletion if set to far/near/both
+#      - ACCOUNT1_PATTERNS=*
