@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Create directories for config and mail storage
-RUN mkdir -p /config /Mail && \
+RUN mkdir -p /config /Mail /scripts && \
     chmod 700 -R /Mail
 
 # Create entrypoint script
