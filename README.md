@@ -17,4 +17,9 @@ The mbsync config file and the mail folder are exposed as bind mounts. Up to 9 m
 See comments in docker-compose.example for more information.
 
 Usage: 
-- To-Do
+- `git clone https://github.com/gdshadow01/mbsync-dockerized.git && cd mbsync-dockerized`
+- set up account(s) in docker-compose.yml and change variables if needed (see https://isync.sourceforge.io/mbsync.html for options)
+- `docker compose build`
+- optional: provide mbsync.rc at /config mount point
+- `docker compose up` for running in foreground or `docker compose up -d` when running in background (as daemon, see docker-compose.yml)
+
