@@ -18,7 +18,7 @@ See comments in docker-compose.yml for more information.
 
 ## Usage: 
 - `git clone https://github.com/gdshadow01/mbsync-dockerized.git && cd mbsync-dockerized`
-- set up account(s) in docker-compose.yml and change variables if needed (see https://isync.sourceforge.io/mbsync.html for options)
+- set up mail account(s) in docker-compose.yml and change variables if needed (see https://isync.sourceforge.io/mbsync.html for options)
 - `docker compose build`
 - optional: provide mbsync.rc at /config mount point
 - `docker compose up` for running in foreground or `docker compose up -d` when running in background (as daemon, see docker-compose.yml)
