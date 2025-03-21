@@ -27,7 +27,7 @@ services:
          # Passwords can still be found in the container so everyone who can enter it may find it
          # consider a one-shot-sync and destroy container after run
          # Use docker secrets if you want to keep your password out of the compose file
-         # $ in passwords can be problematic - try escaping - for 1 $ write &&, for 2 $ write &&&
+         # $ in passwords can be problematic - try escaping - for 1 $ write $$, for 2 $ write $$$
          # Most other special characters should be handled - else edit the config file manually and replace PassCmd with Pass YOURPASSWORDHERE
 #      - ACCOUNT1_IMAP_HOST=imap.demo.com  # e.g. imap.gmail.com
        # settings
