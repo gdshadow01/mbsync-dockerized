@@ -14,7 +14,7 @@ This project aims to spin up a docker container with mbsync. Accounts and basic 
 
 The mbsync config file and the mail folder are exposed as bind mounts. Up to 9 mail accounts can be auto-generated. 
 
-See comments in docker-compose.example for more information.
+See comments in docker-compose.yml for more information.
 
 ## Usage: 
 - `git clone https://github.com/gdshadow01/mbsync-dockerized.git && cd mbsync-dockerized`
