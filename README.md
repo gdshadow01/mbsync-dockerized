@@ -1,7 +1,7 @@
 # mbsync-dockerized
-mbsync in docker with option for several accounts, auto-generated config  from compose, option to use own config and restore.
+mbsync in docker with option to backup several accounts, optionally auto-generate config for mbsync from docker-compose or use own config and easy restore to remote account.
 
-I needed a offline backup solution for my mail accounts that
+I needed an offline backup solution for my IMAP mail accounts that
 - lets me choose the storage folder
 - lets me restore to a remote target
 - supports multiple accounts
