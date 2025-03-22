@@ -34,7 +34,7 @@ services:
 #      - ACCOUNT1_SSL_TYPE=IMAPS
 #      - ACCOUNT1_SSL_VERSIONS=TLSv1.2
 #      - ACCOUNT1_SUBFOLDERS=Verbatim
-#      - ACCOUNT1_SYNC_MODE=Pull # Sync; Set the synchronization operation to perform; Pull - propagate changes from far to near
+#      - ACCOUNT1_SYNC_MODE=Pull # Sync; Set the synchronization operation to perform; Pull - propagate changes from far to near, Push - propagate changes from near to far side.
 #      - ACCOUNT1_SYNC_STATE=*   # SyncState; Set the location of this Channel’s synchronization state files. * means that the state should be saved in a file named .mbsyncstate in the near side mailbox itself
 #      - ACCOUNT1_CREATE=Near    # Automatically create missing mailboxes [on the far/near side]
 #      - ACCOUNT1_EXPUNGE=None   # (!) Permanently remove all messages [on the far/near side] which are marked for deletion if set to far/near/both
