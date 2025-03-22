@@ -5,8 +5,8 @@ I needed an offline backup solution for my IMAP mail accounts that
 - lets me choose the storage folder
 - lets me restore to a remote target
 - supports multiple accounts
-- is open-source and stable
 - is dockerized
+- creates a config file for mbsync from docker-compose.yml
 
 As I could't find that:
 
