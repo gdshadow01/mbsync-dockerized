@@ -16,7 +16,7 @@ The mbsync config file and the mail folder are exposed as bind mounts. Up to 10 
 
 See comments in docker-compose.yml for more information.
 
-## Usage: 
+## usage: 
 - `git clone https://github.com/gdshadow01/mbsync-dockerized.git && cd mbsync-dockerized`
 - set up mail account(s) in docker-compose.yml and change variables if needed (see https://isync.sourceforge.io/mbsync.html for options)
 - `docker compose build`
@@ -24,5 +24,5 @@ See comments in docker-compose.yml for more information.
 - `docker compose up` for running in foreground or `docker compose up -d` when running in background (as daemon, see docker-compose.yml)
 
 ## other solutions
-- docker-mbsync by JakeWharthon: `https://github.com/JakeWharton/docker-mbsync`
-- mbsync by jon6fingrs: `https://github.com/jon6fingrs/mbsync/tree/main`
+- [docker-mbsync by JakeWharthon](https://github.com/JakeWharton/docker-mbsync)
+- [mbsync by jon6fingrs](https://github.com/jon6fingrs/mbsync/tree/main)
